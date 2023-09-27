@@ -1,0 +1,12 @@
+{
+    "name": "mama/tutorialproject",
+    "description": "Tracking expenses",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\":"src/Framework",
+            "App\\": "src/App"
+        }
+    }
+}
