@@ -11,5 +11,3 @@ $app = new App();
 $app -> get('/',[HomeController::class,'home']);
 
 return $app;
-
-?>

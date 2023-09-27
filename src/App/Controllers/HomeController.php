@@ -1,13 +1,25 @@
 <?php
 
-    declare(strict_types = 1);
+declare(strict_types=1);
 
-    namespace App\Controllers;
+namespace App\Controllers;
 
-    class HomeController {
-        public function home() {
-            echo 'home page';
-        }
+use Framework\TemplateEngine;
+use App\Config\Paths;
+
+class HomeController
+{
+    private TemplateEngine $view;
+
+    public function __construct()
+    {
+        $this->view = new TemplateEngine(Paths::VIEW);
     }
 
-?>
+    public function home()
+    {
+        echo $this->view->render("/index.php", [
+            'title' => 'Home Page'
+        ]);
+    }
+}
